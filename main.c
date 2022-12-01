@@ -1,6 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "piece.h"
 
 int main()
 {
-    printf("Hello!\n");
+    Piece p = makePiece(WHITE | KING, NULL);
+    printf("%c\n", p.sprite);
+    return 0;  
 }
