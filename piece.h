@@ -24,5 +24,6 @@ char getColour(Piece p);
 int getIndex(Piece p);
 char findSprite(char type);
 Piece makePiece(char type, void* board);
+char fromChar(char fen);
 
 #endif

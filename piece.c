@@ -23,3 +23,18 @@ Piece makePiece(char type, void* board)
 {
     return (Piece){type, findSprite(type), 0, board};
 }
+
+char fromChar(char fen)
+{
+    char colour = fen > '[' ? WHITE : BLACK;
+    char types[6] = "rnbqkp";
+    if (colour == WHITE)
+        fen += 'A' - 'a';
+
+    int i = 0;
+    for (; types[i] != fen && i < 6; i++);
+    if (i == 6)
+        return BLANK;
+    char typeActuals[6] = {ROOK, KNIGHT, BISHOP, QUEEN, KING, PAWN};
+    return typeActuals[i] | colour;
+}
